@@ -1,6 +1,6 @@
 import Card from './NewsCard';
 
-function NewsGrid({ noticias }) {
+function NewsGrid({ noticias, favoritos, toggleFavorito }) {
   return (
     <div className="news-grid">
       {noticias.map((noticia) => (
