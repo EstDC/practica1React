@@ -15,7 +15,9 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
   //(Todo lo anteriro se puede borrar si se quiere, pero así puedo comprobar el correcto funcionamiento)
   //--------------------------------------------------------------------
 
-  const isFavorito = Array.isArray(favoritos) && favoritos.some((item) => item.id === id);
+   //Verificar si el artículo es favorito
+   const isFavorito = Array.isArray(favoritos) && favoritos.some((item) => item.id === id);
+   console.log('Botón de Favoritos clicado con ID:', id);
   
   const { language } = useContext(LangContext); // Obtener idioma actual
   const translation = translations?.[language] || {};// Buscar la traducción
@@ -25,17 +27,20 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
 
     return (
       <div className="card">
-        <button onClick={() => toggleFavorito({
-          id,
-          headline,
-          date,
-          body,
-          section,
-          image_url,
-          author,
-          translations
-        })}>
-          {isFavorito ? '⭐ Favorito' : '☆ Añadir a Favoritos'}
+        <button 
+          className={`favorito-button ${isFavorito ? 'active' : ''}`}
+          onClick={() => toggleFavorito({
+            id,
+            headline,
+            date,
+            body,
+            section,
+            image_url,
+            author,
+            translations
+          })}
+        >
+          {isFavorito ? '⭐' : '☆'}
         </button>
         <img src={image_url} alt={displayedHeadline} />
         <div className="card-content">
