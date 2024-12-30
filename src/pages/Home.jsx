@@ -16,24 +16,24 @@ function Home (noticias, favoritos, toggleFavorito){// Recibimos como props
     console.log('Favoritos en Home:', favoritos);//Verificamos
     console.log('toggleFavorito:', toggleFavorito); //Verificamos
 
-    // useEffect(() => {
-    //   const fetchNoticias = async () => {
-    //     try {
-    //       const response = await fetch('https://news-foniuhqsba-uc.a.run.app');
-    //       if (!response.ok) {
-    //         throw new Error(`HTTP error! status: ${response.status}`);
-    //       }
-    //       const data = await response.json();
-    //       setNoticias(data);
-    //     } catch (err) {
-    //       setError(err.message);
-    //     } finally {
-    //       setLoading(false);
-    //     }
-    //   };
+    useEffect(() => {
+      const fetchNoticias = async () => {
+        try {
+          const response = await fetch('https://news-foniuhqsba-uc.a.run.app');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const data = await response.json();
+          setNoticias(data);
+        } catch (err) {
+          setError(err.message);
+        } finally {
+          setLoading(false);
+        }
+      };
   
-    //   fetchNoticias();
-    // }, []);
+      fetchNoticias();
+    }, []);
 
     //const sections = noticias ? [...new Set(noticias.map((noticia) => noticia.section))] : [];
   
