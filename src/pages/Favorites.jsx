@@ -2,7 +2,7 @@ import React from 'react';
 import NewsCard from '../components/NewsCard';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 function Favorites({ favoritos, toggleFavorito }) {
     return (
