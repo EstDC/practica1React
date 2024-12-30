@@ -14,6 +14,7 @@ function Home (favoritos, toggleFavorito ){// Recibimos como props
 
     console.log('Idioma actual en Home:', language);//Verificamos
     console.log('Favoritos en Home:', favoritos);//Verificamos
+    console.log('toggleFavorito:', toggleFavorito); //Verificamos
 
     useEffect(() => {
       const fetchNoticias = async () => {
