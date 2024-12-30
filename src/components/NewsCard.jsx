@@ -5,7 +5,7 @@ console.log('El archivo Card.jsx se ha cargado')//Comprobación
 
 function Card({ id, headline, date, body, section, image_url, author, translations, toggleFavorito, favoritos }) {
   //Comprobación de que se está cargando correctamente los datos
-  console.log('Props recibidas en Card:', { id, headline });
+  console.log('Props recibidas en Card:', { id, headline, favoritos });
   useEffect(() => {
     console.log('El componente Card se montó con ID:', id);
   }, [id]);
@@ -25,9 +25,18 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
 
     return (
       <div className="card">
-      <button onClick={() => toggleFavorito({ id, headline, date, body, section, image_url, author })}>
-        {isFavorito ? '⭐ Favorito' : '☆ Añadir a Favoritos'}
-      </button>
+        <button onClick={() => toggleFavorito({
+          id,
+          headline,
+          date,
+          body,
+          section,
+          image_url,
+          author,
+          translations
+        })}>
+          {isFavorito ? '⭐ Favorito' : '☆ Añadir a Favoritos'}
+        </button>
         <img src={image_url} alt={displayedHeadline} />
         <div className="card-content">
           <h3><Link to={`/Article/${id}`}>{displayedHeadline}</Link></h3>
