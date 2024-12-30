@@ -1,6 +1,7 @@
 import Card from './NewsCard';
 
 function NewsGrid({ noticias, favoritos, toggleFavorito }) {
+  console.log('Favoritos en NewsGrid:', favoritos);//Verificamos
   return (
     <div className="news-grid">
       {noticias.map((noticia) => (

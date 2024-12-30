@@ -13,7 +13,8 @@ function Home (){
     const { language } = useContext(LangContext);
 
     console.log('Idioma actual en Home:', language);//Verificamos
-  
+    console.log('Favoritos en Home:', favoritos);//Verificamos
+    
     useEffect(() => {
       const fetchNoticias = async () => {
         try {
@@ -42,7 +43,7 @@ function Home (){
       <div>
         <Header noticias={noticias} />
         <Navbar />
-        <NewsGrid noticias={noticias} />
+        <NewsGrid noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito}/>
         <Footer />
         </div>
     );
