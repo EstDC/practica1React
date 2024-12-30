@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import React, { useEffect, useState, useContext } from 'react';
 import Home from './pages/Home';
 import Article from './pages/Article';
@@ -24,13 +24,13 @@ function AppContent() {
   }, [language]);
 
   return (
-    <Router>
+    <>
       <Routes>
         <Route path="/" element={<Home noticias={noticias} />} />
         <Route path="/Section/:section" element={<Section noticias={noticias} />} />
         <Route path="/Article/:id" element={<Article noticias={noticias} />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
