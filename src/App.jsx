@@ -98,12 +98,7 @@ function AppContent() {
         }
       />
       <Route
-        path="/Article/:id"
-        element={
-          <Article
-            noticias={noticias}
-            favoritos={favoritos}
-            toggleFavorito={toggleFavorito}
+        path="/Article/:id" element={<Article noticias={noticias} favoritos={favoritos}toggleFavorito={toggleFavorito}
           />
         }
       />
