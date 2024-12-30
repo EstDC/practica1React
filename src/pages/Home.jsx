@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import { LangContext } from '../components/LangProvider';
 
 
-function Home (favoritos, toggleFavorito ){// Recibimos como props
+function Home ({ noticias, favoritos, toggleFavorito }){// Recibimos como props
     const [noticias, setNoticias] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
