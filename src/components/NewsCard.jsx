@@ -3,7 +3,7 @@ import { useEffect, useContext } from 'react';
 import { LangContext } from './LangProvider';
 console.log('El archivo Card.jsx se ha cargado')//Comprobación
 
-function Card({ id, headline, date, body, section, image_url, author, translations }) {
+function Card({ id, headline, date, body, section, image_url, author, translations, toggleFavorito, favoritos }) {
   //Comprobación de que se está cargando correctamente los datos
   console.log('Props recibidas en Card:', { id, headline });
   useEffect(() => {
@@ -15,6 +15,8 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
   //(Todo lo anteriro se puede borrar si se quiere, pero así puedo comprobar el correcto funcionamiento)
   //--------------------------------------------------------------------
 
+  const isFavorito = favoritos.some((fav) => fav.id === noticia.id);
+  
   const { language } = useContext(LangContext); // Obtener idioma actual
   const translation = translations?.[language] || {};// Buscar la traducción
   // Valores originales si no hay traducción
@@ -23,6 +25,9 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
 
     return (
       <div className="card">
+        <button onClick={() => toggleFavorito(noticia)}>
+          {isFavorito ? '⭐ Favorito' : '☆ Añadir a Favoritos'}
+        </button>
         <img src={image_url} alt={displayedHeadline} />
         <div className="card-content">
           <h3><Link to={`/Article/${id}`}>{displayedHeadline}</Link></h3>

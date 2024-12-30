@@ -10,6 +10,7 @@ function Navbar() {
       <Link to="/Section/Finance" className="nav-link">Finance</Link>
       <Link to="/Section/Technology" className="nav-link">Technology</Link>
       <Link to="/Section/Entertainment" className="nav-link">Entertainment</Link>
+      <Link to="/Favorites">⭐ Favoritos</Link>
     </nav>
   );
 }
