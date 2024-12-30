@@ -15,7 +15,7 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
   //(Todo lo anteriro se puede borrar si se quiere, pero así puedo comprobar el correcto funcionamiento)
   //--------------------------------------------------------------------
 
-  const isFavorito = favoritos.some((fav) => fav.id === noticia.id);
+  const isFavorito = favoritos.some((fav) => fav.id === id);
   
   const { language } = useContext(LangContext); // Obtener idioma actual
   const translation = translations?.[language] || {};// Buscar la traducción

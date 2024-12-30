@@ -14,6 +14,8 @@ function NewsGrid({ noticias }) {
           image_url={noticia.image_url}
           author={noticia.author}
           translations={noticia.translations}
+          favoritos={favoritos}
+          toggleFavorito={toggleFavorito}
         />
       ))}
     </div>
