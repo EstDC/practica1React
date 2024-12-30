@@ -35,6 +35,15 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
       console.error('Error: toggleFavorito no es una función');
     }
   };
+
+
+  const manejarFavorito = () => {
+    if (typeof toggleFavorito === 'function') {
+      toggleFavorito({ id, headline, date, body, section, image_url, author, translations });
+    } else {
+      console.error('Error: toggleFavorito no es una función');
+    }
+  };
   
   const { language } = useContext(LangContext); // Obtener idioma actual
   const translation = translations?.[language] || {};// Buscar la traducción
@@ -46,7 +55,7 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
       <div className="card">
         <button 
           className={`favorito-button ${isFavorito ? 'active' : ''}`}
-          onClick={handleClick}
+          onClick={manejarFavorito}
         >
           {isFavorito ? '⭐' : '☆'}
         </button>
