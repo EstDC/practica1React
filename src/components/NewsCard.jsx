@@ -25,9 +25,9 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
 
     return (
       <div className="card">
-        <button onClick={() => toggleFavorito(noticia)}>
-          {isFavorito ? '⭐ Favorito' : '☆ Añadir a Favoritos'}
-        </button>
+      <button onClick={() => toggleFavorito({ id, headline, date, body, section, image_url, author })}>
+        {isFavorito ? '⭐ Favorito' : '☆ Añadir a Favoritos'}
+      </button>
         <img src={image_url} alt={displayedHeadline} />
         <div className="card-content">
           <h3><Link to={`/Article/${id}`}>{displayedHeadline}</Link></h3>
