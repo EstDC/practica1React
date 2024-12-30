@@ -25,14 +25,14 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
       <div className="card">
         <img src={image_url} alt={displayedHeadline} />
         <div className="card-content">
-          <h3><Link to={`/Article/${id}`}>{displayedHeadline}</Link></h3>
+          <h3><Link to={`/practica1React/Article/${id}`}>{displayedHeadline}</Link></h3>
           <div className="card-meta">
             <span>By {author}</span> | <span>{new Date(date).toLocaleDateString()}</span>
           </div>
           <p>{displayedBody}</p>
           <div className="card-footer">
             <span className="card-section">{section}</span>|
-            <div className="read-more"><Link to={`/Article/${id}`}><strong>Read more</strong></Link></div> 
+            <div className="read-more"><Link to={`/practica1React/Article/${id}`}><strong>Read more</strong></Link></div> 
           </div>
         </div>
       </div>

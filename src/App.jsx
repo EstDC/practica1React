@@ -24,13 +24,11 @@ function AppContent() {
   }, [language]);
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home noticias={noticias} />} />
-        <Route path="/Section/:section" element={<Section noticias={noticias} />} />
-        <Route path="/Article/:id" element={<Article noticias={noticias} />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/practica1React/*" element={<Home noticias={noticias} />} />
+      <Route path="/practica1React/Section/:section" element={<Section noticias={noticias} />} />
+      <Route path="/practica1React/Article/:id" element={<Article noticias={noticias} />} />
+    </Routes>
   );
 }
 
