@@ -61,7 +61,7 @@ function AppContent() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
+      <Route path="/" element={<Home favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
       <Route path="/Section/:section" element={<Section noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
       <Route path="/Article/:id" element={<Article noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
       <Route path="/Favorites" element={<Favorites favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
