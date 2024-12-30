@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import { LangContext } from '../components/LangProvider';
 
 
-function Home (){
+function Home (favoritos, toggleFavorito ){// Recibimos como props
     const [noticias, setNoticias] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -14,7 +14,7 @@ function Home (){
 
     console.log('Idioma actual en Home:', language);//Verificamos
     console.log('Favoritos en Home:', favoritos);//Verificamos
-    
+
     useEffect(() => {
       const fetchNoticias = async () => {
         try {
