@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Article from './pages/Article';
 import Section from './components/Section';
 import { LangProvider, LangContext } from './components/LangProvider';
+import Favorites from './pages/Favorites';
 
 function AppContent() {
   const [noticias, setNoticias] = useState([]);
