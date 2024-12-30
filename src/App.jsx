@@ -46,23 +46,13 @@ function AppContent() {
   }, [language]);
 
   return (
-<Routes>
-      <Route 
-        path="/" 
-        element={<Home noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} 
-      />
-      <Route 
-        path="/Section/:section" 
-        element={<Section noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} 
-      />
-      <Route 
-        path="/Article/:id" 
-        element={<Article noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} 
-      />
-      <Route 
-        path="/Favorites" 
-        element={<Favorites favoritos={favoritos} toggleFavorito={toggleFavorito} />} 
-      />
+    <Routes>
+      <Route path="/" element={<Home noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
+      <Route path="/Section/:section" element={<Section noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
+      <Route path="/Article/:id" element={<Article noticias={noticias} favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
+      <Route path="/Favorites" element={<Favorites favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
+      {/* Ruta comodín para manejar errores */}
+      <Route path="*" element={<h2>Página no encontrada</h2>} />
     </Routes>
   );
 }
