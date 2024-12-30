@@ -6,7 +6,7 @@ import React, { useContext } from 'react';
 import { LangContext } from '../components/LangProvider';
 
 
-function Article({ noticias }) {
+function Article({ noticias, favoritos, toggleFavorito }) {
   const { id } = useParams();
   const { language } = useContext(LangContext); // Idioma actual desde el contexto
   const noticia = noticias.find((noticia) => noticia.id.toString() === id);

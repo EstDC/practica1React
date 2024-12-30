@@ -4,8 +4,12 @@ import Navbar from '../components/Navbar';
 import NewsGrid from '../components/NewsGrid';
 import Footer from './Footer';
 
-function Section({ noticias }) {
+function Section({ noticias, favoritos, toggleFavorito }) {
   const { section } = useParams(); // Recupera la sección de la URL
+  console.log("Parámetro section:", section);//Verificación
+  if (!section) {
+    return <h2>Error: El parámetro 'section' es inválido</h2>;
+  }
 
   const noticiasFiltradas = noticias.filter((noticia) => noticia.section === section);
 
