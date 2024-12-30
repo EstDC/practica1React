@@ -22,7 +22,7 @@ function Favorites({ favoritos, toggleFavorito }) {
               image_url={noticia.image_url}
               author={noticia.author}
               translations={noticia.translations}
-              favoritos={favoritos}
+              isFavorito={true}
               toggleFavorito={toggleFavorito}
             />
           ))
