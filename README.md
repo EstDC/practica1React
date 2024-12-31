@@ -100,6 +100,10 @@ Endpoint de Noticias:
 https://news-foniuhqsba-uc.a.run.app
 
 
+Funcionalidades en proceso de implementación
+============================================
+Agregar la funcionalidad de guardar noticias favoritas en LocalStore y cargarlas. Por ahora no funciona, el onClick me está dando problemas con useEffect y el toggleFavoritos.
+
 Parámetros Disponibles:
 =======================
     lang: Idioma de las noticias (en, es, fr, etc.)
