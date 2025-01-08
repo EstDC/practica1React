@@ -3,17 +3,6 @@ import { useEffect, useContext } from 'react';
 import { LangContext } from './LangProvider';
 console.log('El archivo Card.jsx se ha cargado')//Comprobación
 
-//Función para truncar el body dentro del card, cuando el css no funcione
-function bodyTruncado() {
-  const textoTraducido = displayedBody || ''; // Asegura que no sea undefined
-  const maxCaracteres = 50; // Número máximo de caracteres permitidos
-  const textoFinal = textoTraducido.length > maxCaracteres 
-    ? textoTraducido.slice(0, maxCaracteres) + '...' 
-    : textoTraducido;
-  console.log(textoFinal); 
-  return textoFinal; // Devolvemos el texto para poder usarlo en el renderizado
-}
-
 function Card({ id, headline, date, body, section, image_url, author, translations, toggleFavorito, favoritos }) {
   //Comprobación de que se está cargando correctamente los datos
   console.log('Props recibidas en Card:', { id, headline, favoritos, toggleFavorito });
@@ -52,6 +41,18 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
   // Valores originales si no hay traducción
   const displayedHeadline = translation.headline || headline;
   const displayedBody = translation.abstract || body;
+
+  //Para truncar el body dentro del card, cuando el css no funcione
+  const bodyTruncado = () => {
+    const textoTraducido = displayedBody || ''; // Asegura que no sea undefined
+    const maxCaracteres = 100; // Número máximo de caracteres permitidos
+    const textoFinal = textoTraducido.length > maxCaracteres 
+      ? textoTraducido.slice(0, maxCaracteres) + '...' 
+      : textoTraducido;
+
+    console.log('Texto truncado:', textoFinal); 
+    return textoFinal; // Devolvemos el texto para poder usarlo en el renderizado
+  };
 
     return (
       <div className="card">
