@@ -43,10 +43,10 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
   const displayedBody = translation.abstract || body;
 
   //Para truncar el body dentro del card, cuando el css no funcione
-  const textoNormalizado = displayedBody.replace(/\n/g, ' ').trim(); // Elimina saltos de línea
-  const textoTruncado = textoNormalizado.length > 180 
-    ? textoNormalizado.slice(0, 180) + '...' 
-    : textoNormalizado;
+  //const textoNormalizado = displayedBody.replace(/\n/g, ' ').trim(); // Elimina saltos de línea
+  const textoTruncado = displayedBody.length > 180 
+    ? displayedBody.slice(0, 180) + '...' 
+    : displayedBody;
 
     return (
       <div className="card">
@@ -62,7 +62,7 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
           <div className="card-meta">
             <span>By {author}</span> | <span>{new Date(date).toLocaleDateString()}</span>
           </div>
-          <p>{textoTruncado.slice(0, 180)}</p>
+          <p>{textoTruncado}</p>
           <div className="card-footer">
             <span className="card-section">{section}</span>|
             <div className="read-more"><Link to={`/Article/${id}`}><strong>Read more</strong></Link></div> 
