@@ -6,7 +6,7 @@ console.log('El archivo Card.jsx se ha cargado')//Comprobación
 //Función para truncar el body dentro del card, cuando el css no funcione
 function bodyTruncado() {
   const textoTraducido = displayedBody || ''; // Asegura que no sea undefined
-  const maxCaracteres = 80; // Número máximo de caracteres permitidos
+  const maxCaracteres = 50; // Número máximo de caracteres permitidos
   const textoFinal = textoTraducido.length > maxCaracteres 
     ? textoTraducido.slice(0, maxCaracteres) + '...' 
     : textoTraducido;
