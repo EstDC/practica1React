@@ -55,10 +55,10 @@ function Search({ noticias }) {
             {resultados.length > 0 ? (
               resultados.map((noticia) => (
                 <div key={noticia.id} className="search-result-item">
-                  <img src={noticia.image_url} alt={noticia.headline} />
+                  <Link to={`/Article/${id}`}><img src={noticia.image_url} alt={noticia.headline} /></Link>
                   <div>
-                    <h4>{noticia.headline}</h4>
-                    <p>{noticia.abstract.slice(0, 100)}...</p>
+                    <h4><Link to={`/Article/${id}`}>{noticia.headline}</Link></h4>
+                    <p><Link to={`/Article/${id}`}>{noticia.abstract.slice(0, 100)}...</Link></p>
                     <small>Hace {Math.floor(Math.random() * 12)} meses</small>
                   </div>
                 </div>
