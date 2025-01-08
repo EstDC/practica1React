@@ -1,5 +1,6 @@
 import searchIcon from '../assets/icons8-search-128.png';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Search({ noticias }) {
   const [isOpen, setIsOpen] = useState(false); // Controla el modal
