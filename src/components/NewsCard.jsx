@@ -3,6 +3,13 @@ import { useEffect, useContext } from 'react';
 import { LangContext } from './LangProvider';
 console.log('El archivo Card.jsx se ha cargado')//Comprobación
 
+function truncateText(text, maxLength) {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + '...';
+  }
+  return text;
+}
+
 function Card({ id, headline, date, body, section, image_url, author, translations, toggleFavorito, favoritos }) {
   //Comprobación de que se está cargando correctamente los datos
   console.log('Props recibidas en Card:', { id, headline, favoritos, toggleFavorito });

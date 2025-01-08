@@ -324,6 +324,7 @@
   margin: 10px 0;
   text-align: justify;
   text-overflow: ellipsis; /* Para truncar el texto */
+  overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Número máximo de líneas */
   -webkit-box-orient: vertical;
