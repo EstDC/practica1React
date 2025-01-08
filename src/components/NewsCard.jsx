@@ -43,16 +43,9 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
   const displayedBody = translation.abstract || body;
 
   //Para truncar el body dentro del card, cuando el css no funcione
-  const bodyTruncado = () => {
-    const textoTraducido = displayedBody || ''; // Asegura que no sea undefined
-    const maxCaracteres = 100; // Número máximo de caracteres permitidos
-    const textoFinal = textoTraducido.length > maxCaracteres 
-      ? textoTraducido.slice(0, maxCaracteres) + '...' 
-      : textoTraducido;
-
-    console.log('Texto truncado:', textoFinal); 
-    return textoFinal; // Devolvemos el texto para poder usarlo en el renderizado
-  };
+  const textoTruncado = displayedBody.length > 150 
+    ? displayedBody.slice(0, 150) + '...' 
+    : displayedBody;
 
     return (
       <div className="card">
@@ -68,7 +61,7 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
           <div className="card-meta">
             <span>By {author}</span> | <span>{new Date(date).toLocaleDateString()}</span>
           </div>
-          <p>{bodyTruncado()}</p>
+          <p>{textoTruncado}</p>
           <div className="card-footer">
             <span className="card-section">{section}</span>|
             <div className="read-more"><Link to={`/Article/${id}`}><strong>Read more</strong></Link></div> 
