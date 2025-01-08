@@ -44,8 +44,8 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
 
   //Para truncar el body dentro del card, cuando el css no funcione
   const textoNormalizado = displayedBody.replace(/\n/g, ' ').trim(); // Elimina saltos de línea
-  const textoTruncado = textoNormalizado.length > 150 
-    ? textoNormalizado.slice(0, 150) + '...' 
+  const textoTruncado = textoNormalizado.length > 180 
+    ? textoNormalizado.slice(0, 180) + '...' 
     : textoNormalizado;
 
     return (
