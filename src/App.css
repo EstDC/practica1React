@@ -289,6 +289,7 @@
 
 .card-content {
   padding: 16px;
+  overflow: hidden;
 }
 
 .card-content h3 {
