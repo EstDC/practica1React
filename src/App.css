@@ -104,6 +104,7 @@
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
 }
 
 .search-result-item {
@@ -137,6 +138,15 @@
   color: #888;
 }
 
+.search-link {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease-in-out;
+}
+.search-link:hover {
+  color: #0073e6;
+  text-decoration: underline;
+}
 
 /* Translator */
 .translator {
