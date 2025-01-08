@@ -3,7 +3,7 @@ import { LangContext } from './LangProvider';
 
 function Translator() {
   const { language, changeLanguage } = useContext(LangContext);
-  console.log('🌍 Idioma actual en Translator:', language); //Verificamos
+  console.log('Idioma actual en Translator:', language); //Verificamos
 
   // Lista de idiomas disponibles
   const languages = [

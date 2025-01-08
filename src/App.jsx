@@ -9,7 +9,7 @@ import Favorites from './pages/Favorites';
 
 function AppContent() {
   const [noticias, setNoticias] = useState([]);
-  const { language } = useContext(LangContext); //Correcto: dentro de un componente funcional, 
+  const { language } = useContext(LangContext); //Correcto: dentro de un componente funcional 
   const [favoritos, setFavoritos] = useState([]);
   //el useContext no se puede usar directamente en el return, me daba problemas al envolver todo en el LangProvider en el return
   console.log('Idioma actual:', language);//Verificamos que se haya cargado el idioma en el contexto

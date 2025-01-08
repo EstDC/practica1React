@@ -27,7 +27,8 @@ function Article({ noticias }) {
   const formattedBody = body
     .replace(/\n\n/g, '</p><p>') // Reemplaza saltos dobles por cierre y apertura de <p>
     .replace(/^/, '<p>') // Abre el primer párrafo
-    .replace(/$/, '</p>'); // Cierra el último párrafo
+    .replace(/$/, '</p>')
+    .replace(/--> Text length need to be between 0 and 5000 characters/g, ' ');
 
   return (
     <div>
