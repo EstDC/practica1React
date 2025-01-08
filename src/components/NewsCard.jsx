@@ -62,7 +62,7 @@ function Card({ id, headline, date, body, section, image_url, author, translatio
           <div className="card-meta">
             <span>By {author}</span> | <span>{new Date(date).toLocaleDateString()}</span>
           </div>
-          <p>{textoTruncado}</p>
+          <p>{textoTruncado.slice(0, 180)}</p>
           <div className="card-footer">
             <span className="card-section">{section}</span>|
             <div className="read-more"><Link to={`/Article/${id}`}><strong>Read more</strong></Link></div> 
